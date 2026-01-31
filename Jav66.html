@@ -14,7 +14,7 @@
     <meta name="monetag" content="c5f0f3571b3f015c9d554f253a967d39">
     
     <meta charset="UTF-8">
-    <title>Download File | SNOS-099</title>
+    <title>Download File | FNS-148</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -502,10 +502,10 @@
         <div class="subtitle">Premium Content Download</div>
 
         <div class="title">
-            <div><i class="fas fa-file-video file-icon"></i>SNOS-099</div>
+            <div><i class="fas fa-file-video file-icon"></i>FNS-148</div>
         </div>
 
-        <div class="quality-btn" onclick="goCountdown('UHD')">
+        <div class="quality-btn" onclick="goCountdown()">
             <div class="quality-left">
                 <div class="download-icon"><i class="fas fa-download"></i></div>
                 <div>
@@ -514,41 +514,14 @@
                 </div>
             </div>
             <div class="quality-right">
-                <div class="quality-size">3.5 GB</div>
+                <div class="quality-size">2.5 GB</div>
                 <div class="quality-resolution">1920x1080</div>
-            </div>
-        </div>
-
-        <div class="quality-btn" onclick="goCountdown('HD')">
-            <div class="quality-left">
-                <div class="download-icon"><i class="fas fa-download"></i></div>
-                <div>
-                    HD Quality
-                    <span class="quality-badge">RECOMMENDED</span>
-                </div>
-            </div>
-            <div class="quality-right">
-                <div class="quality-size">1.6 GB</div>
-                <div class="quality-resolution">1280x720</div>
-            </div>
-        </div>
-
-        <div class="quality-btn" onclick="goCountdown('SD')">
-            <div class="quality-left">
-                <div class="download-icon"><i class="fas fa-download"></i></div>
-                <div>
-                    Normal Quality
-                </div>
-            </div>
-            <div class="quality-right">
-                <div class="quality-size">740.2 MB</div>
-                <div class="quality-resolution">852x480</div>
             </div>
         </div>
         
         <div class="info-text">
             <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
-            Please select a quality to start your download.
+            Click to start your download
         </div>
     </div>
 </div>
@@ -584,44 +557,19 @@
 
 <script>
 /* ================= CONFIG ================= */
-// AD LINKS
-const AD_LINKS = {
-    UHD: "https://otieu.com/4/8257954",
-    HD:  "https://otieu.com/4/8251888", 
-    SD:  "https://otieu.com/4/7512545"
-};
-
-const SECONDARY_AD_LINKS = {
-    UHD: "https://otieu.com/4/8247899",
-    HD:  "https://otieu.com/4/8195375", 
-    SD:  "https://otieu.com/4/8257975"
-};
-
-const DOWNLOAD_LINKS = {
-    UHD: "https://rs20h5sddjxfxrk.acek-cdn.com/vp/01/07293/y5uun8d32yzt_h/SNOS-099-un-javgg.net.mp4?t=gQge5E8fW0ja7zTbsQnQ8psRtKRuTIqbxbSkpGKhT3s&s=1769776298&e=129600&f=36467860&sp=400&i=180.191&srv=F6vE2P5Wjncn",
-    HD:  "https://rs20h5sddjxfxrk.acek-cdn.com/vp/01/07293/y5uun8d32yzt_n/SNOS-099-un-javgg.net.mp4?t=buI8ti1m_rIr9k8tE-cd3ym8Tzh0owVs2qpFlWHsS7o&s=1769776339&e=129600&f=36467860&sp=400&i=180.191&srv=F6vE2P5Wjncn",
-    SD:  "https://rs20h5sddjxfxrk.acek-cdn.com/vp/01/07293/y5uun8d32yzt_l/SNOS-099-un-javgg.net.mp4?t=F_dNPye9s8E5-72jq6ttDsHNhEr3Lp6QT-NOYZSEjZ0&s=1769776367&e=129600&f=36467860&sp=400&i=180.191&srv=F6vE2P5Wjncn"
-};
-
-let selectedAdLink = "";
-let selectedSecondaryAdLink = "";
-let selectedDownloadLink = "";
-let selectedQuality = "";
+const AD_LINK = "https://otieu.com/4/8257954";
+const SECONDARY_AD_LINK = "https://otieu.com/4/8247899";
+const DOWNLOAD_LINK = "https://13nt2qnqm72d.acek-cdn.com/vp/01/07276/n50v4d8xhss0_h/FNS-148-un-javgg.net.mp4?t=TfT4mBvWpE_78GGjvFsmygpD_SEskh1ptBL4AjCRFOs&s=1769778985&e=129600&f=36395352&sp=400&i=180.191&srv=r0zxJ9MoB6wU";
 
 /* ================= FLOW ================= */
-function goCountdown(quality){
-    selectedQuality = quality;
-    selectedAdLink = AD_LINKS[quality];
-    selectedSecondaryAdLink = SECONDARY_AD_LINKS[quality];
-    selectedDownloadLink = DOWNLOAD_LINKS[quality];
-
+function goCountdown(){
     // Visual feedback for button click
     const clickedBtn = event.currentTarget;
     clickedBtn.style.transform = "scale(0.98)";
     
     // 1. OPEN AD WHEN QUALITY IS SELECTED
     setTimeout(() => {
-        window.open(selectedAdLink, "_blank", "noopener,noreferrer");
+        window.open(AD_LINK, "_blank", "noopener,noreferrer");
     }, 100);
     
     // Disable all quality buttons
@@ -693,7 +641,7 @@ function handleDownloadClick() {
     
     // 1. OPEN SECONDARY AD
     setTimeout(() => {
-        window.open(selectedSecondaryAdLink, "_blank", "noopener,noreferrer");
+        window.open(SECONDARY_AD_LINK, "_blank", "noopener,noreferrer");
         
         // 2. START FILE DOWNLOAD
         setTimeout(() => {
@@ -711,7 +659,7 @@ function handleDownloadClick() {
                 qualityInfo.style.color = '#32e0a1';
                 qualityInfo.style.marginTop = '10px';
                 qualityInfo.innerHTML = `<i class="fas fa-video" style="margin-right: 5px;"></i>
-                    Downloading: ${selectedQuality} Quality`;
+                    Downloading: FNS-148 (UHD Premium Quality)`;
                 btn.parentNode.insertBefore(qualityInfo, btn.nextSibling);
                 
                 // Enable download again after delay
@@ -729,8 +677,8 @@ function handleDownloadClick() {
 
 function startFileDownload() {
     const downloadLink = document.createElement('a');
-    downloadLink.href = selectedDownloadLink;
-    downloadLink.download = getFileNameFromQuality(selectedQuality);
+    downloadLink.href = DOWNLOAD_LINK;
+    downloadLink.download = 'FNS-148-UHD-Premium.mp4';
     downloadLink.style.display = 'none';
     document.body.appendChild(downloadLink);
     
@@ -739,12 +687,6 @@ function startFileDownload() {
     setTimeout(() => {
         document.body.removeChild(downloadLink);
     }, 100);
-}
-
-function getFileNameFromQuality(quality) {
-    if (quality === 'UHD') return `SNOS-099-UHD-1080p.mp4`;
-    else if (quality === 'HD') return `SNOS-099-HD-720p.mp4`;
-    else return `SNOS-099-SD-480p.mp4`;
 }
 </script>
 </body>
