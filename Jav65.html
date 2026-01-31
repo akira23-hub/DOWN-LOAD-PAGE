@@ -1,600 +1,811 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNC6XL9CE1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LNC6XL9CE1');
-    </script>
-    
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNC6XL9CE1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LNC6XL9CE1');
+  </script>
+  
   <script src="https://quge5.com/88/tag.min.js" data-zone="206945" async data-cfasync="false"></script>
-    <meta name="monetag" content="c5f0f3571b3f015c9d554f253a967d39">
-      
-<meta charset="UTF-8">
-<title>Download File | FNS-148</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* ================= LANDING ================= */
-.page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.container {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    background: rgba(15, 15, 15, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 40px 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(50, 224, 161, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #32e0a1, #00b4d8, #32e0a1);
-    background-size: 200% 100%;
-    animation: shimmer 3s infinite linear;
-}
-
-@keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-.logo {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #32e0a1, #00b4d8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    color: #aaa;
-    margin-bottom: 30px;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-}
-
-.title-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    border-left: 4px solid #32e0a1;
-    margin-bottom: 40px;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.file-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #32e0a1, #00b4d8);
-    border-radius: 12px;
-    font-size: 1.8rem;
-    flex-shrink: 0;
-}
-
-.title-text {
-    font-size: 1.8rem;
-    font-weight: 600;
-    word-break: break-all;
-}
-
-.quality-btn {
-    width: 100%;
-    background: linear-gradient(to right, rgba(25, 25, 35, 0.8), rgba(35, 35, 45, 0.8));
-    border-radius: 16px;
-    padding: 25px 25px;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-}
-
-.quality-btn:hover {
-    transform: translateY(-5px);
-    border-color: rgba(50, 224, 161, 0.3);
-    box-shadow: 0 10px 25px rgba(50, 224, 161, 0.2);
-    background: linear-gradient(to right, rgba(30, 30, 40, 0.9), rgba(40, 40, 50, 0.9));
-}
-
-.quality-btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.7s;
-}
-
-.quality-btn:hover::after {
-    left: 100%;
-}
-
-.quality-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.download-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #32e0a1, #00b4d8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-size: 1.6rem;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(50, 224, 161, 0.3);
-    transition: transform 0.3s;
-}
-
-.quality-btn:hover .download-icon {
-    transform: scale(1.1);
-}
-
-.quality-badge {
-    background: linear-gradient(to right, #32e0a1, #00b4d8);
-    color: #000;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-left: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.quality-right {
-    text-align: right;
-}
-
-.quality-size {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.quality-resolution {
-    font-size: 0.9rem;
-    color: #aaa;
-}
-
-/* ================= COUNTDOWN ================= */
-.countdown-box {
-    background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.9));
-    padding: 50px 40px;
-    border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(50, 224, 161, 0.2);
-    max-width: 600px;
-    width: 90%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.countdown-box::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(50, 224, 161, 0.1) 0%, transparent 70%);
-    z-index: -1;
-}
-
-.countdown-box h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    background: linear-gradient(to right, #32e0a1, #00b4d8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
-}
-
-.timer-container {
-    position: relative;
-    display: inline-block;
-    margin: 30px 0;
-}
-
-.timer {
-    font-size: 5.5rem;
-    font-weight: 800;
-    color: #32e0a1;
-    text-shadow: 0 0 20px rgba(50, 224, 161, 0.5);
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-}
-
-.timer::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 10%;
-    width: 80%;
-    height: 5px;
-    background: linear-gradient(to right, transparent, #32e0a1, transparent);
-    border-radius: 5px;
-}
-
-.countdown-message {
-    font-size: 1.1rem;
-    margin: 20px 0 40px;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.download-btn {
-    margin-top: 20px;
-    padding: 18px 45px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(to right, #555, #333);
-    color: #aaa;
-    cursor: not-allowed;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.download-btn.active {
-    background: linear-gradient(to right, #32e0a1, #00b4d8);
-    color: #000;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(50, 224, 161, 0.4);
-    transform: translateY(0);
-}
-
-.download-btn.active:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(50, 224, 161, 0.6);
-}
-
-.download-btn.active:active {
-    transform: translateY(0);
-}
-
-.progress-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 220px;
-    height: 220px;
-    z-index: -1;
-}
-
-.progress-ring circle {
-    fill: none;
-    stroke-width: 4;
-    stroke-linecap: round;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-    stroke-dasharray: 628;
-    stroke-dashoffset: 628;
-    animation: countdown 5s linear forwards;
-}
-
-@keyframes countdown {
-    to {
-        stroke-dashoffset: 0;
+  <meta name="monetag" content="c5f0f3571b3f015c9d554f253a967d39">
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Download File | FNS-148</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
-}
 
-/* Responsive */
-@media (max-width: 768px) {
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 15px;
+      width: 100%;
+    }
+
+    /* ================= LANDING ================= */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     .container {
-        padding: 30px 20px;
-        border-radius: 20px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      background: rgba(15, 15, 15, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(50, 224, 161, 0.1);
+      position: relative;
+      overflow: hidden;
     }
-    
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #32e0a1, #00b4d8, #32e0a1);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
     .logo {
-        font-size: 2rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, #32e0a1, #00b4d8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      letter-spacing: 1px;
     }
-    
+
+    .subtitle {
+      color: #aaa;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
     .title-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-        padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      border-left: 3px solid #32e0a1;
+      margin-bottom: 25px;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
     }
-    
+
+    .file-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #32e0a1, #00b4d8);
+      border-radius: 10px;
+      font-size: 1.4rem;
+    }
+
     .title-text {
-        font-size: 1.5rem;
-        text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      word-break: break-all;
+      text-align: center;
+      line-height: 1.3;
     }
-    
+
     .quality-btn {
-        padding: 20px 20px;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      width: 100%;
+      background: linear-gradient(to right, rgba(25, 25, 35, 0.8), rgba(35, 35, 45, 0.8));
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+      gap: 15px;
+      touch-action: manipulation;
     }
-    
+
+    .quality-btn:active {
+      transform: translateY(-2px) scale(0.99);
+    }
+
+    .quality-btn:hover {
+      transform: translateY(-3px);
+      border-color: rgba(50, 224, 161, 0.3);
+      box-shadow: 0 8px 20px rgba(50, 224, 161, 0.2);
+      background: linear-gradient(to right, rgba(30, 30, 40, 0.9), rgba(40, 40, 50, 0.9));
+    }
+
+    .quality-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .download-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #32e0a1, #00b4d8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 1.3rem;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(50, 224, 161, 0.3);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .quality-btn:active .download-icon {
+      transform: scale(0.95);
+    }
+
+    .quality-badge {
+      background: linear-gradient(to right, #32e0a1, #00b4d8);
+      color: #000;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     .quality-right {
-        text-align: center;
-        width: 100%;
+      text-align: center;
+      width: 100%;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .timer {
-        font-size: 4rem;
+
+    .quality-size {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
     }
-    
+
+    .quality-resolution {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .info-text {
+      margin-top: 20px;
+      color: #777;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    /* ================= COUNTDOWN ================= */
     .countdown-box {
-        padding: 40px 25px;
+      background: linear-gradient(145deg, rgba(20, 20, 30, 0.95), rgba(10, 10, 20, 0.95));
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(50, 224, 161, 0.2);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-}
-</style>
+
+    .countdown-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(50, 224, 161, 0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    .countdown-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #32e0a1, #00b4d8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .timer-container {
+      position: relative;
+      display: inline-block;
+      margin: 20px 0;
+    }
+
+    .timer {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #32e0a1;
+      text-shadow: 0 0 15px rgba(50, 224, 161, 0.5);
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .timer::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 10%;
+      width: 80%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #32e0a1, transparent);
+      border-radius: 4px;
+    }
+
+    .countdown-message {
+      font-size: 0.95rem;
+      margin: 15px 0 25px;
+      color: #ccc;
+      line-height: 1.5;
+      padding: 0 10px;
+    }
+
+    .download-btn {
+      margin-top: 15px;
+      padding: 16px 35px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(to right, #555, #333);
+      color: #aaa;
+      cursor: not-allowed;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 300px;
+      touch-action: manipulation;
+    }
+
+    .download-btn.active {
+      background: linear-gradient(to right, #32e0a1, #00b4d8);
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(50, 224, 161, 0.4);
+      transform: translateY(0);
+    }
+
+    .download-btn.active:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(50, 224, 161, 0.6);
+    }
+
+    .download-btn.active:active {
+      transform: translateY(0);
+    }
+
+    .progress-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 180px;
+      z-index: -1;
+    }
+
+    .progress-ring circle {
+      fill: none;
+      stroke-width: 4;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke-dasharray: 565;
+      stroke-dashoffset: 565;
+      animation: countdown 5s linear forwards;
+    }
+
+    @keyframes countdown {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* ================= RESPONSIVE ADJUSTMENTS ================= */
+    /* Tablet */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .container {
+        max-width: 450px;
+        padding: 30px 25px;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      .title-text {
+        font-size: 1.5rem;
+      }
+      
+      .quality-btn {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 25px;
+      }
+      
+      .quality-right {
+        text-align: right;
+        width: auto;
+        padding-top: 0;
+        border-top: none;
+      }
+      
+      .quality-left {
+        width: auto;
+      }
+      
+      .timer {
+        font-size: 4.5rem;
+      }
+      
+      .countdown-box {
+        padding: 35px 30px;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 769px) {
+      .container {
+        max-width: 600px;
+        padding: 35px 30px;
+      }
+      
+      .logo {
+        font-size: 2.5rem;
+      }
+      
+      .title-container {
+        flex-direction: row;
+        text-align: left;
+        padding: 20px;
+      }
+      
+      .title-text {
+        font-size: 1.8rem;
+        text-align: left;
+      }
+      
+      .quality-btn {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 25px 25px;
+      }
+      
+      .quality-right {
+        text-align: right;
+        width: auto;
+        padding-top: 0;
+        border-top: none;
+      }
+      
+      .quality-left {
+        width: auto;
+      }
+      
+      .timer {
+        font-size: 5.5rem;
+      }
+      
+      .countdown-box {
+        padding: 50px 40px;
+      }
+      
+      .progress-ring {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 360px) {
+      body {
+        padding: 10px;
+      }
+      
+      .container {
+        padding: 20px 15px;
+        border-radius: 16px;
+      }
+      
+      .logo {
+        font-size: 1.6rem;
+      }
+      
+      .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+      }
+      
+      .title-container {
+        padding: 12px;
+        gap: 10px;
+      }
+      
+      .file-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
+      
+      .title-text {
+        font-size: 1.2rem;
+      }
+      
+      .quality-btn {
+        padding: 16px 15px;
+        gap: 12px;
+      }
+      
+      .quality-left {
+        font-size: 1rem;
+        gap: 12px;
+      }
+      
+      .download-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
+      
+      .timer {
+        font-size: 3.5rem;
+      }
+      
+      .countdown-box {
+        padding: 25px 20px;
+      }
+      
+      .download-btn {
+        padding: 14px 25px;
+        font-size: 1rem;
+      }
+      
+      .info-text {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Landscape orientation */
+    @media (max-height: 600px) and (orientation: landscape) {
+      body {
+        padding: 10px;
+      }
+      
+      .page {
+        padding: 10px 0;
+        align-items: flex-start;
+        min-height: auto;
+      }
+      
+      .container, .countdown-box {
+        margin: 10px auto;
+        max-width: 90%;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+      
+      .title-container {
+        margin-bottom: 15px;
+        padding: 10px;
+      }
+      
+      .quality-btn {
+        padding: 14px 15px;
+        margin-bottom: 12px;
+      }
+      
+      .timer {
+        font-size: 3rem;
+      }
+      
+      .countdown-message {
+        margin: 10px 0 20px;
+        font-size: 0.9rem;
+      }
+      
+      .download-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 320px) {
+      .container {
+        padding: 18px 12px;
+      }
+      
+      .logo {
+        font-size: 1.4rem;
+      }
+      
+      .title-text {
+        font-size: 1.1rem;
+      }
+      
+      .quality-left {
+        font-size: 0.95rem;
+      }
+      
+      .download-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+      
+      .timer {
+        font-size: 3rem;
+      }
+      
+      .download-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <!-- ================= LANDING PAGE ================= -->
 <div class="page" id="landing">
-    <div class="container">
-        <div class="logo">BOLDILOCKS</div>
-        <div class="subtitle">Premium Content Download</div>
+  <div class="container">
+    <div class="logo">BOLDILOCKS</div>
+    <div class="subtitle">Premium Content Download</div>
 
-        <div class="title-container">
-            <div class="file-icon">
-                <i class="fas fa-file-video"></i>
-            </div>
-            <div class="title-text">FNS-148</div>
-        </div>
-
-        <div class="quality-btn" onclick="goCountdown()">
-            <div class="quality-left">
-                <div class="download-icon"><i class="fas fa-download"></i></div>
-                <div>
-                    UHD Quality
-                    <span class="quality-badge">PREMIUM</span>
-                </div>
-            </div>
-            <div class="quality-right">
-                <div class="quality-size">2.5 GB</div>
-                <div class="quality-resolution">1920x1080</div>
-            </div>
-        </div>
-        
-        <div style="margin-top: 30px; color: #777; font-size: 0.9rem;">
-            <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
-            Click to start your download
-        </div>
+    <div class="title-container">
+      <div class="file-icon">
+        <i class="fas fa-file-video"></i>
+      </div>
+      <div class="title-text">FNS-148</div>
     </div>
+
+    <div class="quality-btn" onclick="goCountdown()">
+      <div class="quality-left">
+        <div class="download-icon"><i class="fas fa-download"></i></div>
+        <div>
+          UHD Quality
+          <span class="quality-badge">PREMIUM</span>
+        </div>
+      </div>
+      <div class="quality-right">
+        <div class="quality-size">2.5 GB</div>
+        <div class="quality-resolution">1920x1080</div>
+      </div>
+    </div>
+    
+    <div class="info-text">
+      <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
+      Click to start your download
+    </div>
+  </div>
 </div>
 
 <!-- ================= COUNTDOWN PAGE ================= -->
 <div class="page" id="countdownPage" style="display:none">
-    <div class="countdown-box">
-        <svg class="progress-ring" viewBox="0 0 220 220">
-            <circle cx="110" cy="110" r="100" stroke="rgba(50, 224, 161, 0.2)" stroke-width="4"></circle>
-            <circle id="progress-circle" cx="110" cy="110" r="100" stroke="#32e0a1" stroke-width="4"></circle>
-        </svg>
-        
-        <h2>Preparing Your Download</h2>
-        <div class="timer-container">
-            <div class="timer" id="timer">5</div>
-        </div>
-        <div class="countdown-message">
-            Your file is being prepared for download.<br>
-            Please wait a moment while we verify your request...
-        </div>
-
-        <button class="download-btn" id="finalDownload">
-            <i class="fas fa-download" style="margin-right: 10px;"></i>
-            Download Now
-        </button>
-        
-        <div style="margin-top: 20px; color: #777; font-size: 0.9rem;">
-            <i class="fas fa-ad" style="margin-right: 8px;"></i>
-            Clicking "Download Now" will open ads and start your download
-        </div>
+  <div class="countdown-box">
+    <svg class="progress-ring" viewBox="0 0 220 220">
+      <circle cx="110" cy="110" r="100" stroke="rgba(50, 224, 161, 0.2)" stroke-width="4"></circle>
+      <circle id="progress-circle" cx="110" cy="110" r="100" stroke="#32e0a1" stroke-width="4"></circle>
+    </svg>
+    
+    <h2>Preparing Your Download</h2>
+    <div class="timer-container">
+      <div class="timer" id="timer">5</div>
     </div>
+    <div class="countdown-message">
+      Your file is being prepared for download.<br>
+      Please wait a moment while we verify your request...
+    </div>
+
+    <button class="download-btn" id="finalDownload">
+      <i class="fas fa-download" style="margin-right: 10px;"></i>
+      Download Now
+    </button>
+    
+    <div class="info-text" style="margin-top: 20px;">
+      <i class="fas fa-ad" style="margin-right: 6px;"></i>
+      Clicking "Download Now" will open ads and start your download
+    </div>
+  </div>
 </div>
 
 <script>
 /* ================= CONFIG ================= */
-// AD LINKS - Both will be used (one on quality click, one on download click)
 const AD_LINK = "https://otieu.com/4/8257954";
 const SECONDARY_AD_LINK = "https://otieu.com/4/8247899";
-
-// DOWNLOAD LINK - UHD quality
 const DOWNLOAD_LINK = "https://13nt2qnqm72d.acek-cdn.com/vp/01/07276/n50v4d8xhss0_h/FNS-148-un-javgg.net.mp4?t=TfT4mBvWpE_78GGjvFsmygpD_SEskh1ptBL4AjCRFOs&s=1769778985&e=129600&f=36395352&sp=400&i=180.191&srv=r0zxJ9MoB6wU";
 
 /* ================= FLOW ================= */
 function goCountdown(){
-    // 1. OPEN AD WHEN QUALITY IS SELECTED
+  // Visual feedback for button click
+  const qualityBtn = document.querySelector('.quality-btn');
+  qualityBtn.style.transform = "scale(0.98)";
+  
+  // 1. OPEN AD WHEN QUALITY IS SELECTED
+  setTimeout(() => {
     window.open(AD_LINK, "_blank", "noopener,noreferrer");
+  }, 100);
+  
+  // Show loading state on button
+  qualityBtn.style.opacity = '0.6';
+  qualityBtn.style.pointerEvents = 'none';
+  
+  // 2. SHOW COUNTDOWN PAGE
+  setTimeout(() => {
+    document.getElementById("landing").style.display = "none";
+    const countdownPage = document.getElementById("countdownPage");
+    countdownPage.style.display = "flex";
+    countdownPage.style.opacity = "0";
     
-    // Show loading state on button
-    const qualityBtn = document.querySelector('.quality-btn');
-    qualityBtn.style.opacity = '0.5';
-    qualityBtn.style.pointerEvents = 'none';
+    // Trigger reflow for animation
+    countdownPage.offsetHeight;
+    countdownPage.style.opacity = "1";
     
-    // 2. SHOW COUNTDOWN PAGE
-    setTimeout(() => {
-        document.getElementById("landing").style.display = "none";
-        const countdownPage = document.getElementById("countdownPage");
-        countdownPage.style.display = "flex";
-        countdownPage.style.opacity = "0";
-        
-        // Trigger reflow for animation
-        countdownPage.offsetHeight;
-        countdownPage.style.opacity = "1";
-        
-        startTimer();
-    }, 500);
+    startTimer();
+  }, 300);
 }
 
 function startTimer(){
-    let time = 5;
-    const timerEl = document.getElementById("timer");
-    const btn = document.getElementById("finalDownload");
-    const progressCircle = document.getElementById("progress-circle");
+  let time = 5;
+  const timerEl = document.getElementById("timer");
+  const btn = document.getElementById("finalDownload");
+  const progressCircle = document.getElementById("progress-circle");
+  
+  // Reset animation
+  progressCircle.style.animation = 'none';
+  progressCircle.offsetHeight;
+  progressCircle.style.animation = 'countdown 5s linear forwards';
+
+  const interval = setInterval(() => {
+    time--;
+    timerEl.textContent = time;
     
-    // Reset animation
-    progressCircle.style.animation = 'none';
-    progressCircle.offsetHeight; // Trigger reflow
-    progressCircle.style.animation = 'countdown 5s linear forwards';
+    // Add pulse effect when counting down
+    timerEl.style.transform = "scale(1.08)";
+    setTimeout(() => {
+      timerEl.style.transform = "scale(1)";
+    }, 150);
 
-    const interval = setInterval(() => {
-        time--;
-        timerEl.textContent = time;
-        
-        // Add pulse effect when counting down
-        timerEl.style.transform = "scale(1.1)";
-        setTimeout(() => {
-            timerEl.style.transform = "scale(1)";
-        }, 200);
-
-        if(time <= 0){
-            clearInterval(interval);
-            btn.classList.add("active");
-            btn.innerHTML = '<i class="fas fa-download" style="margin-right: 10px;"></i> Download Now';
-            
-            // Add click handler for final download
-            btn.onclick = handleDownloadClick;
-        }
-    }, 1000);
+    if(time <= 0){
+      clearInterval(interval);
+      btn.classList.add("active");
+      btn.innerHTML = '<i class="fas fa-download" style="margin-right: 10px;"></i> Download Now';
+      
+      // Add click handler for final download
+      btn.onclick = handleDownloadClick;
+    }
+  }, 1000);
 }
 
 function handleDownloadClick() {
-    const btn = document.getElementById("finalDownload");
+  const btn = document.getElementById("finalDownload");
+  
+  if (!btn.classList.contains('active')) return;
+  
+  // Disable button
+  btn.disabled = true;
+  btn.style.cursor = 'not-allowed';
+  btn.style.transform = 'scale(0.98)';
+  
+  // Visual feedback
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Opening Ads...';
+  
+  // 1. OPEN SECONDARY AD
+  setTimeout(() => {
+    window.open(SECONDARY_AD_LINK, "_blank", "noopener,noreferrer");
     
-    // Disable button to prevent multiple clicks
-    btn.disabled = true;
-    btn.style.cursor = 'not-allowed';
-    
-    // Visual feedback - Show loading state
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Opening Ads...';
-    
-    // 1. OPEN SECONDARY AD IN NEW TAB
+    // 2. START FILE DOWNLOAD
     setTimeout(() => {
-        // Open secondary ad link
-        window.open(SECONDARY_AD_LINK, "_blank", "noopener,noreferrer");
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Starting Download...';
+      startFileDownload();
+      
+      // 3. Update UI
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check" style="margin-right: 10px;"></i> Download Started!';
+        btn.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
         
-        // 2. START FILE DOWNLOAD AFTER ADS OPEN
+        // Show quality info
+        const qualityInfo = document.createElement('div');
+        qualityInfo.className = 'info-text';
+        qualityInfo.style.color = '#32e0a1';
+        qualityInfo.style.marginTop = '10px';
+        qualityInfo.innerHTML = `<i class="fas fa-video" style="margin-right: 5px;"></i>
+          Downloading: FNS-148 (UHD Premium Quality)`;
+        btn.parentNode.insertBefore(qualityInfo, btn.nextSibling);
+        
+        // Enable download again after delay
         setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Starting Download...';
-            startFileDownload();
-            
-            // 3. Update button to show success
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check" style="margin-right: 10px;"></i> Download Started!';
-                btn.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
-                
-                // Show quality info
-                const qualityInfo = document.createElement('div');
-                qualityInfo.innerHTML = `<div style="margin-top: 10px; color: #32e0a1; font-size: 0.9rem;">
-                    <i class="fas fa-video" style="margin-right: 5px;"></i>
-                    Downloading: SNOS-099 (UHD Premium Quality)
-                </div>`;
-                btn.parentNode.insertBefore(qualityInfo, btn.nextSibling);
-                
-                // Option to download again after 2 seconds
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-redo" style="margin-right: 10px;"></i> Download Again';
-                    btn.style.background = 'linear-gradient(to right, #32e0a1, #00b4d8)';
-                    btn.disabled = false;
-                    btn.style.cursor = 'pointer';
-                    btn.onclick = handleDownloadClick;
-                }, 2000);
-            }, 500);
-        }, 500);
-    }, 300);
+          btn.innerHTML = '<i class="fas fa-redo" style="margin-right: 10px;"></i> Download Again';
+          btn.style.background = 'linear-gradient(to right, #32e0a1, #00b4d8)';
+          btn.disabled = false;
+          btn.style.cursor = 'pointer';
+          btn.style.transform = 'scale(1)';
+        }, 2000);
+      }, 500);
+    }, 500);
+  }, 300);
 }
 
 function startFileDownload() {
-    // Create temporary link for download
-    const downloadLink = document.createElement('a');
-    downloadLink.href = DOWNLOAD_LINK;
-    downloadLink.download = 'SNOS-099-UHD-Premium.mp4';
-    downloadLink.style.display = 'none';
-    document.body.appendChild(downloadLink);
-    
-    // Trigger the download
-    downloadLink.click();
-    
-    // Clean up
-    setTimeout(() => {
-        document.body.removeChild(downloadLink);
-    }, 100);
-}
-
-// Quick test function (for debugging)
-function testDownload() {
-    const link = document.createElement('a');
-    link.href = DOWNLOAD_LINK;
-    link.download = 'SNOS-099-UHD-Premium.mp4';
-    link.click();
+  const downloadLink = document.createElement('a');
+  downloadLink.href = DOWNLOAD_LINK;
+  downloadLink.download = 'FNS-148-UHD-Premium.mp4';
+  downloadLink.style.display = 'none';
+  document.body.appendChild(downloadLink);
+  
+  downloadLink.click();
+  
+  setTimeout(() => {
+    document.body.removeChild(downloadLink);
+  }, 100);
 }
 </script>
 </body>
