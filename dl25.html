@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download File</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 15px;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+            padding: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container, .countdown-box {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .container::before, .countdown-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #6366f1);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .file-icon {
+            display: inline-flex;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 18px;
+            margin-bottom: 25px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .download-title, .countdown-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .download-btn, .final-download-btn {
+            width: 100%;
+            background: linear-gradient(to right, #6366f1, #8b5cf6);
+            border: none;
+            border-radius: 14px;
+            padding: 18px 20px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .final-download-btn {
+            background: linear-gradient(to right, #475569, #64748b);
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .final-download-btn.active {
+            background: linear-gradient(to right, #6366f1, #8b5cf6);
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* ================= LINK BOX STYLES ================= */
+        .link-display-box {
+            display: none;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .instruction-text {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .link-input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .link-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            color: #8b5cf6;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: monospace;
+        }
+
+        .copy-btn {
+            background: #6366f1;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            min-width: 70px;
+        }
+
+        /* Timer Styles */
+        .countdown-wrapper { position: relative; width: 180px; height: 180px; margin: 20px auto; }
+        .timer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; font-weight: 800; color: #6366f1; }
+        .progress-ring circle { fill: none; stroke-width: 4; transform: rotate(-90deg); transform-origin: 50% 50%; }
+        .progress-circle { stroke: #6366f1; stroke-dasharray: 565; stroke-dashoffset: 565; transition: stroke-dashoffset 1s linear; }
+        .background-circle { stroke: rgba(99, 102, 241, 0.1); }
+    </style>
+</head>
+<body>
+
+<div class="page" id="landing">
+    <div class="container">
+        <div class="file-icon"><i class="fas fa-download"></i></div>
+        <div class="download-title">Ready to Download</div>
+        <button class="download-btn" onclick="startDownload()">
+            <i class="fas fa-download"></i> DOWNLOAD NOW
+        </button>
+    </div>
+</div>
+
+<div class="page" id="countdownPage" style="display:none">
+    <div class="countdown-box">
+        <div class="countdown-wrapper">
+            <svg class="progress-ring" viewBox="0 0 200 200">
+                <circle class="background-circle" cx="100" cy="100" r="90"></circle>
+                <circle class="progress-circle" id="circle" cx="100" cy="100" r="90"></circle>
+            </svg>
+            <div class="timer" id="timer">10</div>
+        </div>
+        <div class="countdown-title">Preparing File</div>
+        
+        <button class="final-download-btn" id="finalDownload">
+            <i class="fas fa-download"></i> Get Link
+        </button>
+
+        <div class="link-display-box" id="linkBox">
+            <div class="instruction-text">
+                <strong>Step 1:</strong> Copy the Terabox link.<br>
+                <strong>Step 2:</strong> Paste it at <a href="https://iteraplay.com/" target="_blank" style="color: #8b5cf6; text-decoration: none;">iteraplay.com</a> to download.
+            </div>
+            <div class="link-input-group">
+                <div class="link-input" id="teraboxUrl">https://1024terabox.com/s/1VL9e6uRn9ZsmxID3iN2YnQ</div>
+                <button class="copy-btn" id="copyBtn" onclick="copyLink()">COPY</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const MONETAG_LINKS = ["https://otieu.com/4/8251888", "https://otieu.com/4/7512585", "https://otieu.com/4/8257954"];
+
+function startDownload() {
+    window.open(MONETAG_LINKS[Math.floor(Math.random()*MONETAG_LINKS.length)], "_blank");
+    document.getElementById("landing").style.display = "none";
+    document.getElementById("countdownPage").style.display = "flex";
+    runTimer();
+}
+
+function runTimer() {
+    let time = 10;
+    const timerEl = document.getElementById("timer");
+    const circle = document.getElementById("circle");
+    const btn = document.getElementById("finalDownload");
+    const circumference = 2 * Math.PI * 90;
+
+    const interval = setInterval(() => {
+        time--;
+        timerEl.textContent = time;
+        circle.style.strokeDashoffset = circumference - ((10 - time) / 10) * circumference;
+        if (time <= 0) {
+            clearInterval(interval);
+            btn.classList.add("active");
+            btn.onclick = handleFinalAction;
+        }
+    }, 1000);
+}
+
+function handleFinalAction() {
+    const btn = document.getElementById("finalDownload");
+    window.open(MONETAG_LINKS[Math.floor(Math.random()*MONETAG_LINKS.length)], "_blank");
+    
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> Copy Link Below';
+        btn.style.background = "#10b981";
+        document.getElementById("linkBox").style.display = "block";
+    }, 500);
+}
+
+// FIXED COPY LOGIC
+function copyLink() {
+    const text = document.getElementById("teraboxUrl").innerText;
+    const btn = document.getElementById("copyBtn");
+
+    // Try primary Clipboard API
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+            showSuccessState(btn);
+        }).catch(() => {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+
+function fallbackCopy(text, btn) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+        document.execCommand('copy');
+        showSuccessState(btn);
+    } catch (err) {
+        console.error('Copy failed');
+    }
+    document.body.removeChild(textArea);
+}
+
+function showSuccessState(btn) {
+    const originalText = btn.innerText;
+    btn.innerText = "COPIED!";
+    btn.style.background = "#10b981";
+    setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = "";
+    }, 2000);
+}
+</script>
+</body>
+</html>
